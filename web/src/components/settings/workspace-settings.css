@@ -1,0 +1,39 @@
+.settings .shead.workspace-settings-head { margin-bottom: 10px; }
+.settings .workspace-heading { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px; min-height: 0; margin: 8px 0 6px; padding: 0; }
+.settings .workspace-heading h3 { margin: 0; }
+.settings .workspace-list li { padding: 6px 4px; }
+.settings .workspace-info { display: grid; flex: 1; min-width: 0; gap: 2px; }
+.settings .workspace-list .wsn { min-width: 0; overflow-wrap: anywhere; }
+.settings .workspace-list code { font-size: 12px; }
+.settings .workspace-meta { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 8px 12px; max-width: 50%; }
+.settings .workspace-meta .note { white-space: normal; overflow-wrap: anywhere; }
+.settings .workspace-project-help { margin-top: 6px; }
+.settings .workspace-advanced { margin-top: 12px; border: 1px solid var(--rule); border-radius: 10px; }
+.settings .workspace-advanced summary { display: flex; align-items: center; flex-wrap: wrap; gap: 4px 10px; min-height: 36px; padding: 6px 12px; border-radius: 10px; cursor: pointer; font-size: 13px; font-weight: 500; }
+.settings .workspace-advanced summary::-webkit-details-marker { display: none; }
+.settings .workspace-advanced summary::before { content: ''; flex: none; width: 6px; height: 6px; border-top: 1.5px solid currentColor; border-right: 1.5px solid currentColor; transform: rotate(45deg); }
+.settings .workspace-advanced[open] summary::before { transform: rotate(135deg); }
+.settings .workspace-advanced summary:hover { background: var(--hover); }
+.settings .workspace-advanced summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
+.settings .workspace-summary-note { margin-left: auto; color: var(--ink-2); font-size: 12px; font-weight: 400; }
+.settings .workspace-advanced-content { padding: 0 12px 12px; }
+.settings .workspace-advanced h3 { margin-top: 12px; }
+.settings .workspace-advanced h3:first-child { margin-top: 6px; }
+.settings .workspace-roots { margin-top: 6px; }
+.settings .workspace-root-label { display: block; margin-top: 8px; font-size: 12.5px; color: var(--ink-2); }
+.settings .workspace-advanced .rootadd { margin-top: 6px; }
+.settings .workspace-limit-row { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 12px; margin: 6px 0; }
+.settings .workspace-limit-status { color: var(--ink-2); font-size: 12.5px; }
+@media (max-width: 600px) {
+  .settings .workspace-list li { align-items: stretch; flex-direction: column; gap: 4px; }
+  .settings .workspace-meta { justify-content: flex-start; max-width: none; }
+  .settings .workspace-summary-note { margin-left: 18px; }
+  .settings .workspace-advanced .rootadd { flex-wrap: wrap; }
+  .settings .workspace-advanced .rootadd .inp { flex-basis: 160px; }
+}
+@media (pointer: coarse) {
+  .settings .workspace-advanced summary { min-height: 44px; }
+  .settings .workspace-heading .btn, .settings .workspace-meta .btn, .settings .workspace-roots .btn, .settings .workspace-advanced .rootadd .btn { min-height: 44px; }
+  .settings .workspace-advanced .rootadd .inp { height: 44px; }
+  .settings .workspace-advanced .stepper button { width: 44px; height: 44px; }
+}

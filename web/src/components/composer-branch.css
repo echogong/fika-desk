@@ -1,0 +1,16 @@
+.composer-actions { display: flex; flex: none; align-items: center; gap: 2px; }
+.composer-branch-button[aria-busy='true'] { color: var(--primary); cursor: progress; }
+.composer-branch-button[aria-expanded='true'] { background: var(--hover); color: var(--ink); }
+.composer-branch-option { width: 100%; border: 0; background: none; color: inherit; font: inherit; text-align: left; }
+.composer-branch-option:hover:not(:disabled), .composer-branch-option:focus-visible { background: var(--hover); }
+.composer-branch-option[aria-checked='true'] { background: color-mix(in oklch, var(--primary) 12%, var(--panel-2)); }
+.composer-branch-option:disabled { opacity: 0.5; cursor: default; }
+.composer-branch-option small { flex: none; }
+.composer-branch-row { display: flex; align-items: center; gap: 2px; min-width: 0; }
+.composer-branch-row .composer-branch-option { flex: 1; width: auto; min-width: 0; }
+.composer-branch-delete { display: grid; place-items: center; flex: none; width: 32px; min-height: 32px; padding: 0; border: 0; border-radius: 7px; background: none; color: var(--ink-3); cursor: pointer; }
+.composer-branch-delete:hover, .composer-branch-delete:focus-visible { background: var(--hover); color: var(--stop); }
+.composer-branch-create { margin-top: 4px; border-top: 1px solid var(--rule); border-radius: 0 0 7px 7px; }
+.composer-branch-create > span { display: flex; align-items: center; gap: 6px; }
+.composer-branch-note { margin: 4px 8px 8px; color: var(--ink-2); font-size: 12px; overflow-wrap: anywhere; }
+@media (pointer: coarse) { .composer-branch-option { min-height: 44px; } .composer-branch-delete { width: 44px; min-height: 44px; } }

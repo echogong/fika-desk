@@ -1,0 +1,19 @@
+/* 文件夹图标上的关闭入口；选择与关闭使用两个独立按钮。 */
+.side .ws-row { position: relative; }
+.side .ws-close { position: absolute; top: 50%; left: 3px; display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 0; border-radius: 7px; background: transparent; color: var(--stop); opacity: 0; transform: translateY(-50%); cursor: pointer; transition: opacity 120ms ease; }
+.side .ws-close:is(:hover, :focus-visible, [aria-busy='true']) { opacity: 1; }
+.side .ws-close:hover { background: transparent; color: var(--stop); }
+.side .ws-close:focus-visible { outline-color: var(--stop); outline-offset: -2px; }
+.side .ws-close:disabled { cursor: default; }
+.side .ws-close[aria-busy='true'] { cursor: wait; }
+.side .ws-row:has(.ws-close:is(:hover, :focus-visible, [aria-busy='true'])) .ws > .i { visibility: hidden; }
+@media (max-width: 760px), (hover: none), (pointer: coarse) {
+  /* 触屏保留文件夹图标，把关闭按钮放在行末，避免点图标选项目时误关闭。 */
+  .side .ws-row .ws { min-height: 44px; }
+  .side .ws-row:has(.ws-close) .ws { padding-right: 50px; }
+  .side .ws-close { left: auto; right: 0; width: 44px; height: 44px; opacity: 1; }
+  .side .ws-row:has(.ws-close) .ws > .i { visibility: visible; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .side .ws-close { transition: none; }
+}

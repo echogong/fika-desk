@@ -1,0 +1,72 @@
+/* 暖色玻璃导航：柔光与浮起阴影替代顶部白色描边。 */
+.side {
+  --nav-glass-fill: color-mix(in oklch, var(--tonal-selection) 85%, transparent);
+  --nav-glass-shade: color-mix(in oklch, var(--tonal-selection) 94%, transparent);
+  --nav-glass-edge: color-mix(in oklch, var(--latte) 13%, transparent);
+  --nav-glass-glow: color-mix(in oklch, var(--latte) 9%, transparent);
+  --nav-glass-shadow: color-mix(in oklch, var(--coffee-shadow) 65%, transparent);
+  --nav-glass-shadow-soft: color-mix(in oklch, var(--coffee-shadow) 40%, transparent);
+  --nav-cta-glow: color-mix(in oklch, var(--latte) 24%, transparent);
+}
+[data-theme='light'] .side {
+  --nav-glass-edge: color-mix(in oklch, var(--latte-ink) 9%, transparent);
+  --nav-glass-glow: color-mix(in oklch, var(--panel-2) 24%, transparent);
+  --nav-cta-glow: color-mix(in oklch, var(--panel-2) 30%, transparent);
+}
+.sidebar-glass-list { position: relative; isolation: isolate; }
+.side .sidebar-glass-selection {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--selection-height, 0px);
+  border: 1px solid var(--nav-glass-edge);
+  border-radius: 11px;
+  background:
+    radial-gradient(ellipse at 22% 18%, var(--nav-glass-glow), transparent 68%),
+    linear-gradient(135deg, var(--nav-glass-fill), var(--nav-glass-shade));
+  box-shadow: 0 4px 10px var(--nav-glass-shadow-soft), 0 1px 3px var(--nav-glass-shadow);
+  -webkit-backdrop-filter: blur(14px) saturate(115%);
+  backdrop-filter: blur(14px) saturate(115%);
+  opacity: 0;
+  transform: translate3d(0, var(--selection-y, 0px), 0);
+  pointer-events: none;
+}
+.side .sidebar-glass-list[data-has-selection] > .sidebar-glass-selection { opacity: 1; }
+.side .sidebar-glass-selection[data-ready] {
+  transition: transform 300ms cubic-bezier(.22, .82, .24, 1), height 220ms ease, opacity 150ms ease;
+}
+.side .sidebar-glass-list[data-has-selection] .ws.is-on,
+.side .sidebar-glass-list[data-has-selection] .ag.is-focus {
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+.side .sidebar-glass-list .row-btn:active { background: color-mix(in oklch, var(--tonal-selection) 55%, transparent); }
+.side .quiet.start::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(ellipse 110px 70px at var(--glass-x, 40%) var(--glass-y, 30%), var(--nav-cta-glow), transparent 72%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+.side .quiet.start:is(:hover, :focus-visible, :active, [aria-expanded='true'])::before { opacity: 1; }
+.side .quiet.start[aria-expanded='true'] { border-color: color-mix(in oklch, var(--latte-ink) 24%, transparent); }
+@media (hover: hover) {
+  .side .quiet.start:hover { transform: translateY(-1px); }
+}
+.side .quiet.start:active { transform: translateY(1px) scale(.985); transition-duration: 90ms; }
+@media (prefers-reduced-motion: reduce) {
+  .side .sidebar-glass-selection, .side .quiet.start, .side .quiet.start::before { transition: none; }
+  .side .quiet.start:is(:hover, :active) { transform: none; }
+}
+@media (prefers-reduced-transparency: reduce), (prefers-contrast: more) {
+  .side .sidebar-glass-selection { background: var(--tonal-selection); border-color: var(--rule-2); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .side .side-launch .quiet.start { background: var(--latte); border-color: var(--primary-edge); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .side .quiet.start::before { display: none; }
+}

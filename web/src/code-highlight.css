@@ -1,0 +1,7 @@
+[data-theme='dark'] { --code-keyword: #dfb7e9; --code-string: #b8d6a0; --code-number: #eac393; --code-function: #a8cfee; --code-comment: #b1a497; }
+[data-theme='light'] { --code-keyword: #713d87; --code-string: #416322; --code-number: #85530e; --code-function: #235b80; --code-comment: #716254; }
+.hljs-keyword, .hljs-selector-tag, .hljs-literal, .hljs-type { color: var(--code-keyword); }
+.hljs-string, .hljs-regexp, .hljs-addition { color: var(--code-string); }
+.hljs-number, .hljs-symbol, .hljs-attr, .hljs-meta { color: var(--code-number); }
+.hljs-title, .hljs-built_in, .hljs-tag, .hljs-name, .hljs-selector-class { color: var(--code-function); }
+.hljs-comment, .hljs-quote { color: var(--code-comment); }

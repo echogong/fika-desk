@@ -1,0 +1,30 @@
+.settings .scontent:has(.language-settings) { padding-block: 18px 24px; }
+.settings .language-settings .shead { margin-bottom: 0; }
+.language-options { display: grid; gap: 6px; padding: 0; margin: 10px 0 6px; border: 0; min-width: 0; }
+.language-options legend { padding: 0; margin-bottom: 6px; font-weight: 600; }
+.language-choice { display: flex; align-items: center; gap: 10px; min-height: 36px; padding: 4px 10px; border: 1px solid var(--rule); border-radius: 8px; background: var(--panel); cursor: pointer; }
+.language-choice:hover { background: var(--hover); }
+.language-choice > span { min-width: 0; overflow-wrap: anywhere; }
+.language-choice:has(input:checked) { border-color: var(--primary); background: var(--panel-2); }
+.language-choice:has(input:focus-visible) { outline: 2px solid var(--primary); outline-offset: 3px; }
+.language-choice input { flex-shrink: 0; accent-color: var(--primary); width: 16px; height: 16px; margin: 0; }
+.language-current { margin-left: auto; font-size: 12px; color: var(--ink-2); }
+.language-type-preview { display: grid; gap: 6px; margin-top: 12px; padding: 12px; border: 1px solid var(--rule); border-radius: 10px; background: var(--panel-2); }
+.language-type-preview > p { margin: 0; }
+.language-type-label { font-size: 12px; color: var(--ink-3); }
+.language-type-title { font: 500 30px/1.35 var(--voice); overflow-wrap: anywhere; }
+.language-type-samples { font-size: 14px; color: var(--ink-2); overflow-wrap: anywhere; }
+/* Longer localized labels must remain readable in narrow settings panes. */
+.settings .btn { height: auto; min-height: 30px; white-space: normal; line-height: 1.35; padding-top: 6px; padding-bottom: 6px; overflow-wrap: anywhere; }
+.settings .btn-sm { min-height: 26px; }
+.settings .btn > svg { flex-shrink: 0; }
+.settings .shead .acts { flex-wrap: wrap; }
+.snav button { overflow-wrap: anywhere; }
+@media (max-width: 760px) {
+  .settings .scontent:has(.language-settings) { padding-block: 12px 20px; }
+  .language-current { font-size: 11px; }
+}
+@media (pointer: coarse) {
+  .language-options { gap: 8px; }
+  .language-choice { min-height: 44px; }
+}

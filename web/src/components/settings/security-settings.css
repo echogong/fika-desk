@@ -1,0 +1,53 @@
+.security-audit-heading { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 12px; margin: 28px 0 8px; }
+.settings .security-audit-heading h3, .settings .security-audit-heading .help { margin: 0; }
+.security-audit-pagination { --audit-page-button-height: 28px; --audit-page-button-border: color-mix(in oklch, var(--primary-edge) 30%, var(--latte)); display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 8px; min-height: var(--audit-page-button-height); margin-top: 10px; }
+.settings .security-audit-pagination .help { min-width: 64px; margin: 0; text-align: center; white-space: nowrap; font-size: 12px; line-height: 18px; font-variant-numeric: tabular-nums; }
+.settings .security-coffee-button { min-height: 28px; height: 28px; padding: 0 8px; border: 1px solid color-mix(in oklch, var(--primary-edge) 20%, var(--latte)); border-radius: 7px; background: var(--latte); color: var(--latte-ink); box-shadow: none; font: 500 12px/18px var(--sans); transition: background 150ms, border-color 150ms, opacity 100ms; }
+.settings .security-coffee-button:hover:not(:disabled) { background: color-mix(in oklch, var(--latte) 92%, var(--primary)); border-color: color-mix(in oklch, var(--primary-edge) 30%, var(--latte)); }
+.settings .security-coffee-button:active:not(:disabled) { opacity: 0.8; }
+.security-logout-button { min-width: 48px; }
+.settings .security-audit-pagination .btn { display: grid; place-items: center; align-self: center; justify-self: start; box-sizing: border-box; width: 80px; max-width: 100%; height: var(--audit-page-button-height); min-height: var(--audit-page-button-height); max-height: var(--audit-page-button-height); padding: 0 8px; border: 1px solid var(--audit-page-button-border); background: var(--latte); opacity: 1; transform: none; box-shadow: none; }
+.settings .security-audit-pagination .btn:last-child { justify-self: end; }
+/* 状态只影响文字，外框始终同高同粗；焦点轮廓收在按钮内部。 */
+.settings .security-audit-pagination .btn:is(:hover, :active, :disabled, :focus-visible) { background: var(--latte); border-color: var(--audit-page-button-border); opacity: 1; transform: none; box-shadow: none; }
+.security-page-button-label { display: block; height: 18px; margin: 0; padding: 0; line-height: 18px; transition: opacity 100ms; }
+.security-audit-pagination .btn:hover:not(:disabled) .security-page-button-label { opacity: 0.85; }
+.security-audit-pagination .btn:active:not(:disabled) .security-page-button-label { opacity: 0.65; }
+.security-audit-pagination .btn:disabled .security-page-button-label { opacity: 0.45; }
+.settings .security-audit-pagination .btn:focus-visible { outline: 2px solid var(--latte-ink); outline-offset: -3px; }
+.settings .security-password { max-width: 480px; gap: 14px; }
+.security-password-field { display: grid; min-width: 0; gap: 6px; font-size: 13px; color: var(--ink-2); }
+.settings .security-password-field .inp { width: 100%; height: 38px; color: var(--ink); font: 14px var(--sans); }
+.settings .security-password-field .inp::placeholder { color: var(--ink-3); }
+.settings .security-password-field .inp:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.security-password-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 2px; }
+.security-password-actions .btn { flex: none; height: 38px; padding-inline: 16px; border-radius: 8px; }
+.settings .security-password-actions .help { flex: 1; min-width: min(220px, 100%); margin: 0; }
+.security-password .serr { margin: 0; }
+.security-audit-table { table-layout: fixed; }
+.security-audit-table th:first-child { width: 92px; }
+.security-audit-table th:last-child { width: 140px; }
+.settings .security-audit-table td { overflow-wrap: anywhere; }
+.settings .security-audit-table td.ip { white-space: normal; }
+@media (max-width: 760px), (pointer: coarse) {
+  .settings .security-password-field .inp { height: 44px; font-size: 16px; }
+  .security-password-actions .btn { min-height: 44px; }
+  .settings .security-coffee-button { min-height: 44px; }
+  .security-audit-pagination { --audit-page-button-height: 44px; }
+}
+@media (max-width: 520px) {
+  .security-password-actions { align-items: flex-start; }
+  .settings .security-password-actions .help { flex-basis: 100%; }
+  .security-audit-table th:first-child { width: 70px; }
+  .security-audit-table th:last-child { width: 90px; }
+  .settings .security-audit-table th, .settings .security-audit-table td { padding-inline: 6px; }
+  .settings .security-audit-table td.t { white-space: normal; }
+  .security-logins-table { table-layout: fixed; }
+  .security-logins-table th:nth-child(2) { width: 66px; }
+  .security-logins-table th:nth-child(3) { width: 94px; }
+  .security-logins-table th:last-child { width: 56px; }
+  .settings .security-logins-table th, .settings .security-logins-table td { padding-inline: 6px; overflow-wrap: anywhere; }
+  .settings .security-logins-table td.t, .settings .security-logins-table td.ip { white-space: normal; }
+  .settings .security-logins-table .cur, .settings .security-logins-table .note { display: block; margin-left: 0; }
+  .security-logins-table .btn-sm { padding-inline: 8px; }
+}
