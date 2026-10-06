@@ -6,7 +6,7 @@
 
 [English](#english) · [部署手册](docs/部署手册.md)
 
-![Fika Desk：四个 Agent 窗口并排](docs/images/main-four.png)
+![登录页：一边喝咖啡，看 Agent 做工作](docs/images/login.png)
 
 > [!WARNING]
 > **安全提示：** Fika Desk 会让 AI Agent 以运行它的系统用户身份，在服务器上读写文件、执行任意命令。
@@ -27,7 +27,7 @@
 - **历史会话**：保存网页会话，读取支持的 Agent 在命令行里开的会话，可搜索、恢复、导出 Markdown。
 - **五种界面语言**（简体中文、繁體中文、English、Svenska、日本語），深色、浅色两种配色，手机也能用。
 
-![登录页：一边喝咖啡，看 Agent 做工作](docs/images/login.png)
+![Fika Desk：四个 Agent 窗口并排](docs/images/main-four.png)
 
 ## 运行要求
 
